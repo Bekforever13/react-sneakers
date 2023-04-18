@@ -1,19 +1,23 @@
 import React from 'react'
+import styles from './Card.module.scss'
 
-function Card() {
+function Card({ name, url, price }) {
+	const onClickBtn = () => {
+		alert(name)
+	}
 	return (
-		<div className='card'>
-			<div class='favourite'>
+		<div className={styles.card}>
+			<div className='favourite'>
 				<img src='/img/heart-1.svg' alt='unliked' />
 			</div>
-			<img width={133} height={112} src='/img/sneaker1.jpg' alt='sneakers' />
-			<p>Мужские Кроссовки Nike Blazer Mid Suede</p>
+			<img width={133} height={112} src={url} alt='sneakers' />
+			<p>{name}</p>
 			<div className='d-flex justify-between align-center'>
 				<div className='d-flex flex-column'>
 					<span>Цена:</span>
-					<h5>12 999руб.</h5>
+					<h5>{price + ' '}руб.</h5>
 				</div>
-				<button className='button'>
+				<button onClick={onClickBtn} className='button'>
 					<img width={11} height={11} src='img/plus.svg' alt='plus' />
 				</button>
 			</div>
