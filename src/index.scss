@@ -41,6 +41,15 @@ header {
 	padding: 0 15px;
 	display: flex;
 	align-items: center;
+	position: relative;
+
+	.clear {
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		top: 14px;
+		right: 15px;
+	}
 
 	img {
 		width: 20px;
@@ -52,6 +61,32 @@ header {
 		padding: 13px;
 		font-size: 16px;
 		width: 200px;
+	}
+}
+
+.cartEmpty {
+	text-align: center;
+
+	p {
+		width: 280px;
+		line-height: 24px;
+	}
+
+	.greenButton {
+		width: 245px;
+		margin-top: 20px;
+		&:hover {
+			img {
+				transform: rotate(180deg) translateX(3px);
+			}
+		}
+		img {
+			position: relative;
+			top: 1px;
+			transform: rotate(180deg);
+			margin-right: 15px;
+			transition: transform 0.15s ease-in-out;
+		}
 	}
 }
 
