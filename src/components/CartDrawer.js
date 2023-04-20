@@ -73,7 +73,7 @@ function CartDrawer({ onClose, sneakers = [], onRemoveItem }) {
 						<p className='opacity-6'>
 							Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.
 						</p>
-						<button className='greenButton'>
+						<button onClick={onClose} className='greenButton'>
 							<img src='/img/arrow.svg' alt='arrow' />
 							Вернуться назад
 						</button>
