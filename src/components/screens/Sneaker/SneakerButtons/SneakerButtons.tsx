@@ -1,4 +1,4 @@
-import styles from './Sneaker.module.scss'
+import styles from '../Sneaker.module.scss'
 import { SneakerAddToFavoriteButton } from './SneakerAddToFavoriteButton/SneakerAddToFavoriteButton'
 import { SneakerAddToCartButton } from './SneakerAddToCartButton/SneakerAddToCartButton'
 

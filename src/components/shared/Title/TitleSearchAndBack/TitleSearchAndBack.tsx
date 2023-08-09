@@ -1,7 +1,6 @@
 import React from 'react'
 import Search from 'antd/es/input/Search'
 import { useDebounce } from 'src/hooks/useDebounce'
-import { useGetSearchResultsQuery } from 'src/redux/index.endpoints'
 import { useActions } from 'src/hooks/useActions'
 import { BsArrowLeft } from 'react-icons/bs'
 import styles from './TitleSearchAndBack.module.scss'
@@ -14,9 +13,6 @@ const TitleSearchAndBack: React.FC = () => {
 	const [searchValue, setSearchValue] = React.useState<string>()
 	const debouncedSearchValue = useDebounce(searchValue, 500)
 	const { setSearch } = useActions()
-	const { data } = useGetSearchResultsQuery(debouncedSearchValue, {
-		skip: !debouncedSearchValue,
-	})
 
 	const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setSearchValue(e.target.value)

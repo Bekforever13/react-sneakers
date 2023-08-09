@@ -17,7 +17,6 @@ const AddToFavoriteButton: React.FC<TSneaker> = sneaker => {
 	const [removeFromFavorite, { isSuccess: removeSuccess }] =
 		useRemoveItemFromFavoriteMutation()
 
-	// const isFavorite = favItems?.some(item => item.isFavorite === sneaker.id)
 	const findItemFromFavoriteToDelete = favItems?.find(
 		item => item.slug === sneaker.slug
 	)

@@ -12,7 +12,11 @@ const CardItem: React.FC<TSneaker> = props => {
 	const navigate = useNavigate()
 
 	const handleClickSneaker = () => {
-		navigate(`/sneaker/${props.id}`)
+		if (pathname === '/favorites') {
+			navigate(`/sneaker/${props.isFavorite}`)
+		} else {
+			navigate(`/sneaker/${props.id}`)
+		}
 	}
 
 	return (
