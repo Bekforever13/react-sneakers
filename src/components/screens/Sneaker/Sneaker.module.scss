@@ -1,0 +1,26 @@
+.root {
+	.img_text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 200px;
+		ul {
+			display: flex;
+			flex-direction: column;
+			row-gap: 10px;
+		}
+		.buttons {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 30px;
+			margin-top: 20px;
+		}
+	}
+	.description {
+		padding: 60px;
+		div {
+			margin-top: 20px;
+		}
+	}
+}

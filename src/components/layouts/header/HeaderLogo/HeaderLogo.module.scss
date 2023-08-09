@@ -1,0 +1,49 @@
+@import 'src/assets/styles/base/_mixin';
+
+.root {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+	-webkit-animation-fill-mode: both;
+
+	@keyframes fadeRight {
+		from {
+			opacity: 0;
+			-webkit-transform: translate3d(-100%, 0, 0);
+			transform: translate3d(-100%, 0, 0);
+		}
+		to {
+			opacity: 1;
+			-webkit-transform: none;
+			transform: none;
+		}
+	}
+
+	-webkit-animation-name: fadeRight;
+	animation-name: fadeRight;
+
+
+
+	img {
+		width: 50px;
+		border-radius: 50%;
+	}
+	div {
+		h2 {
+			color: #000;
+		}
+		span {
+			@include adaptiv-font(18, 16, 18);
+
+			color: #9d9d9d;
+		}
+	}
+}

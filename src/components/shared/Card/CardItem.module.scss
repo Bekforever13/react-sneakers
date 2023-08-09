@@ -1,0 +1,74 @@
+@import 'src/assets/styles/base/_mixin';
+
+.root {
+	border: 1px solid #f3f3f3;
+	padding: 20px;
+	width: 260px;
+	border-radius: 40px;
+	margin-right: 30px;
+	transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+	position: relative;
+
+	// fade up animation
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+	-webkit-animation-fill-mode: both;
+
+	@keyframes fadeUp {
+		from {
+			opacity: 0;
+			-webkit-transform: translate3d(0, 100%, 0);
+			transform: translate3d(0, 100%, 0);
+		}
+		to {
+			opacity: 1;
+			-webkit-transform: none;
+			transform: none;
+		}
+	}
+
+	-webkit-animation-name: fadeUp;
+	animation-name: fadeUp;
+
+	// animation end
+
+	&:hover {
+		box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+		transform: translateY(-5px);
+		cursor: pointer;
+	}
+
+	p {
+		@include adaptiv-font(16, 12, 16);
+		font-weight: 500;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	span {
+		text-transform: uppercase;
+		opacity: 0.5;
+		font-size: 14px;
+	}
+
+	h5 {
+		font-weight: 800;
+		font-size: 14px;
+	}
+	.price_plus {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 20px;
+
+		.price {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}

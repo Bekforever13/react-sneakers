@@ -1,0 +1,21 @@
+@import '/src/assets/styles/base/mixin';
+
+.root {
+	color: #000;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	row-gap: 20px;
+	h1 {
+		@include adaptiv-font(100, 70, 100);
+		font-weight: 400;
+	}
+	span {
+		@include adaptiv-font(20, 16, 20);
+	}
+	button {
+		color: #000;
+	}
+}

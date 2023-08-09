@@ -1,0 +1,34 @@
+.root {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+
+	p {
+		width: 280px;
+		line-height: 24px;
+	}
+
+	.button {
+		width: 245px;
+		margin-top: 20px;
+		&:hover {
+			img {
+				transform: rotate(180deg) translateX(3px);
+			}
+		}
+		img {
+			position: relative;
+			top: 1px;
+			transform: rotate(180deg);
+			margin-right: 15px;
+			transition: transform 0.15s ease-in-out;
+		}
+	}
+	.cartImg {
+		width: 120px;
+		height: 120px;
+		margin-bottom: 20px;
+	}
+}
