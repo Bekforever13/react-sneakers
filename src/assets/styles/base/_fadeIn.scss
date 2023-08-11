@@ -1,0 +1,33 @@
+@mixin fade($where) {
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+	-webkit-animation-fill-mode: both;
+
+	@keyframes fade {
+		from {
+			opacity: 0;
+			@if ($where == up) {
+				-webkit-transform: translate3d(0, 100%, 0);
+				transform: translate3d(0, 100%, 0);
+			} @else if ($where == left) {
+				-webkit-transform: translate3d(-100%, 0, 0);
+				transform: translate3d(-100%, 0, 0);
+			} @else if ($where == right) {
+				-webkit-transform: translate3d(100%, 0, 0);
+				transform: translate3d(100%, 0, 0);
+			}
+		}
+		to {
+			opacity: 1;
+			-webkit-transform: none;
+			transform: none;
+		}
+	}
+
+	-webkit-animation-name: fade;
+	animation-name: fade;
+}

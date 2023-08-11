@@ -1,4 +1,5 @@
 @import 'src/assets/styles/base/_mixin';
+@import 'src/assets/styles/base/_fadeIn';
 
 .root {
 	display: flex;
@@ -6,47 +7,19 @@
 	justify-content: center;
 	gap: 20px;
 
+	@include fade(right);
 
-	
-	-webkit-animation-delay: 0.5s;
-	-moz-animation-delay: 0.5s;
-	animation-delay: 0.5s;
-	-webkit-animation-duration: 0.5s;
-	animation-duration: 0.5s;
-	animation-fill-mode: both;
-	-webkit-animation-fill-mode: both;
-
-	@keyframes fadeLeft {
-		from {
-			opacity: 0;
-			-webkit-transform: translate3d(100%, 0, 0);
-			transform: translate3d(100%, 0, 0);
-		}
-		to {
-			opacity: 1;
-			-webkit-transform: none;
-			transform: none;
-		}
-	}
-
-	-webkit-animation-name: fadeLeft;
-	animation-name: fadeLeft;
-
-
-
-
-
-
-	a, button {
+	a,
+	button {
 		@include adaptiv-font(30, 24, 34);
-		color: #9B9B9B;
+		color: #9b9b9b;
 		display: flex;
 		align-items: center;
 		gap: 10px;
 		background-color: transparent;
 		cursor: pointer;
 		span {
-			color: #5C5C5C;
+			color: #5c5c5c;
 			@include adaptiv-font(14, 12, 18);
 		}
 	}

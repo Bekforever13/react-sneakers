@@ -1,31 +1,10 @@
+@import 'src/assets/styles/base/_fadeIn';
+
 .root {
 	padding-top: 40px;
 
-	-webkit-animation-delay: 0.5s;
-	-moz-animation-delay: 0.5s;
-	animation-delay: 0.5s;
-	-webkit-animation-duration: 0.5s;
-	animation-duration: 0.5s;
-	animation-fill-mode: both;
-	-webkit-animation-fill-mode: both;
+	@include fade(up);
 
-	@keyframes fadeUp {
-		from {
-			opacity: 0;
-			-webkit-transform: translate3d(0, 100%, 0);
-			transform: translate3d(0, 100%, 0);
-		}
-		to {
-			opacity: 1;
-			-webkit-transform: none;
-			transform: none;
-		}
-	}
-
-	-webkit-animation-name: fadeUp;
-	animation-name: fadeUp;
-
-	
 	.img_text {
 		display: flex;
 		align-items: center;

@@ -1,4 +1,5 @@
 @import 'src/assets/styles/base/_mixin';
+@import 'src/assets/styles/base/_fadeIn';
 
 .root {
 	border: 1px solid #f3f3f3;
@@ -9,32 +10,7 @@
 	transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
 	position: relative;
 
-	// fade up animation
-	-webkit-animation-delay: 0.5s;
-	-moz-animation-delay: 0.5s;
-	animation-delay: 0.5s;
-	-webkit-animation-duration: 0.5s;
-	animation-duration: 0.5s;
-	animation-fill-mode: both;
-	-webkit-animation-fill-mode: both;
-
-	@keyframes fadeUp {
-		from {
-			opacity: 0;
-			-webkit-transform: translate3d(0, 100%, 0);
-			transform: translate3d(0, 100%, 0);
-		}
-		to {
-			opacity: 1;
-			-webkit-transform: none;
-			transform: none;
-		}
-	}
-
-	-webkit-animation-name: fadeUp;
-	animation-name: fadeUp;
-
-	// animation end
+	@include fade(up);
 
 	&:hover {
 		box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
