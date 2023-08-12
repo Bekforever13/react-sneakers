@@ -7,6 +7,7 @@ const OrderButton: React.FC<TSneaker> = props => {
 	const [removeFromOrder] = useRemoveItemFromOrdersMutation()
 
 	const handleClickButton = () => {
+		
 		removeFromOrder(props.id)
 	}
 

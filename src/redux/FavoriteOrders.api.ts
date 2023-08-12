@@ -1,4 +1,3 @@
-import { useRemoveItemFromOrdersMutation } from 'src/redux/index.endpoints'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { urlFavOrd } from 'src/config/url.config'
 import { TSneaker } from './sneakers/Sneakers.types'

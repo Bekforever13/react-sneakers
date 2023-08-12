@@ -44,15 +44,9 @@ const AddToFavoriteButton: React.FC<TSneaker> = sneaker => {
 			onClick={findItemFromFavoriteToDelete ? removeFromFav : addToFav}
 			className={styles.favourite}
 		>
-			{findItemFromFavoriteToDelete ? (
-				<IconContext.Provider value={{ color: 'red' }}>
-					<AiFillHeart />
-				</IconContext.Provider>
-			) : (
-				<IconContext.Provider value={{ color: 'red' }}>
-					<AiOutlineHeart />
-				</IconContext.Provider>
-			)}
+			<IconContext.Provider value={{ color: 'red' }}>
+				{findItemFromFavoriteToDelete ? <AiFillHeart /> : <AiOutlineHeart />}
+			</IconContext.Provider>
 		</div>
 	)
 }

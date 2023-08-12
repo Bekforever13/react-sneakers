@@ -5,7 +5,7 @@ import { NumOfItems } from 'src/components/shared/NumOfItems/NumOfItems'
 import { useGetFavoriteItemsQuery } from 'src/redux/index.endpoints'
 
 const HeaderFavorite: React.FC = () => {
-	const {data: favItems} = useGetFavoriteItemsQuery()
+	const {data: favItems } = useGetFavoriteItemsQuery()
 
 	return (
 		<Link to='/favorites' className={styles.root}>

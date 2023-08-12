@@ -10,11 +10,10 @@ import {
 } from 'src/redux/index.endpoints'
 
 const CartItems: React.FC = () => {
-	const { data: cartItems } = useGetCartItemsQuery()
-	const totalPrice = cartItems?.reduce((acc, obj) => acc + +obj.price, 0)
+	const { data } = useGetCartItemsQuery()
+	const totalPrice = data?.reduce((acc, obj) => acc + +obj.price, 0)
 	const { toggleCart } = useActions()
 	const [addToOrders] = useSetItemToOrdersMutation()
-	const { data } = useGetCartItemsQuery()
 	const [removeFromApi] = useRemoveItemFromCartMutation()
 
 	const handleClickRemove = (obj: TSneaker) => {
@@ -23,8 +22,8 @@ const CartItems: React.FC = () => {
 
 	const handleClickBuyButton = async () => {
 		try {
-			if (data && cartItems) {
-				for (let item of cartItems) {
+			if (data) {
+				for (let item of data) {
 					await addToOrders(item)
 				}
 				await Promise.all(data?.map(item => removeFromApi(item.id)))
@@ -38,7 +37,7 @@ const CartItems: React.FC = () => {
 	return (
 		<div className={styles.root}>
 			<div className={styles.items}>
-				{cartItems?.map(obj => (
+				{data?.map(obj => (
 					<div key={obj.id} className={styles.cartItem}>
 						<img src={obj.imgUrl} />
 						<div>

@@ -1,11 +1,11 @@
 import React from 'react'
-import Search from 'antd/es/input/Search'
 import { useDebounce } from 'src/hooks/useDebounce'
 import { useActions } from 'src/hooks/useActions'
 import { BsArrowLeft } from 'react-icons/bs'
 import styles from './TitleSearchAndBack.module.scss'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { UiButton } from 'src/components/ui/button/UiButton'
+import { Input } from 'antd'
 
 const TitleSearchAndBack: React.FC = () => {
 	const { pathname } = useLocation()
@@ -22,9 +22,7 @@ const TitleSearchAndBack: React.FC = () => {
 		setSearch(debouncedSearchValue)
 	}, [debouncedSearchValue])
 
-	const onClickBackButton = () => {
-		navigate('/', { replace: true })
-	}
+	const onClickBackButton = () => navigate('/', { replace: true })
 
 	return (
 		<div className={styles.root}>
@@ -41,7 +39,7 @@ const TitleSearchAndBack: React.FC = () => {
 					GO BACK
 				</UiButton>
 			) : (
-				<Search
+				<Input
 					onChange={handleChangeInput}
 					value={searchValue}
 					size='large'

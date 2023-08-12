@@ -1,11 +1,11 @@
 import { CardItem } from 'src/components/shared/Card/CardItem'
 import { useSelectors } from 'src/hooks/useSelectors'
-import { useGetSearchResultsQuery } from 'src/redux/index.endpoints'
+import { useGetAllSneakersQuery } from 'src/redux/index.endpoints'
 import { TSneaker } from 'src/redux/sneakers/Sneakers.types'
 
 const HomeSearchCards: React.FC = () => {
 	const { search } = useSelectors()
-	const { data: searchResults } = useGetSearchResultsQuery(search)
+	const { data: searchResults } = useGetAllSneakersQuery(search)
 
 	return (
 		<>

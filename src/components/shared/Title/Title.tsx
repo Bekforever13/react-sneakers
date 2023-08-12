@@ -7,7 +7,7 @@ const Title: React.FC<TTitle> = title => {
 	const { search } = useSelectors()
 	return (
 		<div className={styles.root}>
-			<h1>{search ? 'Results by "' + search + '"' : title.title}</h1>
+			<h1>{search ? `Results by '${search}'` : title.title}</h1>
 			<TitleSearchAndBack />
 		</div>
 	)

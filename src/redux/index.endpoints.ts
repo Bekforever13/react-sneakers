@@ -2,11 +2,7 @@ import { cartApi } from './cart/Cart.api'
 import { apiFavoriteOrder } from './FavoriteOrders.api'
 import { sneakersApi } from './sneakers/Sneakers.api'
 
-export const {
-	useGetAllSneakersQuery,
-	useGetSneakerQuery,
-	useGetSearchResultsQuery,
-} = sneakersApi
+export const { useGetAllSneakersQuery, useGetSneakerQuery } = sneakersApi
 
 export const {
 	useGetCartItemsQuery,
